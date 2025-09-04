@@ -86,4 +86,18 @@ python manage.py createsuperuser
 python manage.py runserver
 
 API available at: http://127.0.0.1:8000/api/
+**### Schools API Endpoints**
+
+<img width="1440" height="790" alt="Screenshot 2025-09-05 at 00 24 05" src="https://github.com/user-attachments/assets/dfec4af2-3ee0-4a72-9079-5adeea1431b4" />
+
+**Teachers API-Endpoints**
+
+<img width="1440" height="740" alt="Screenshot 2025-09-05 at 00 24 41" src="https://github.com/user-attachments/assets/f54eb78b-962d-4311-9378-eb787140b7ff" />
+
+
+**Students Api Endpoints**
+
+<img width="1440" height="900" alt="485727800-8770f130-bb6b-4743-9b9e-1ad60eaa9580" src="https://github.com/user-attachments/assets/caa2b37f-70bb-45fd-9374-d8314ee87d5c" />
+
+
 
