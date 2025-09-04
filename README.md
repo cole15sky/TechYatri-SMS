@@ -1,44 +1,61 @@
-# SMS Project (School Management System)
+# School Management System API
 
-A simple **School Management System** built with **Django** and **MySQL**.
-
-This project is designed to be **easy to set up on any machine** with minimal configuration. Currently, it includes:
-
-- `config/` — Django project settings
-- `core/` — Django app containing the `School` model
-- MySQL integration
+## **Objective**
+Build a **School Management System (SMS) API** using **Django** and **MySQL**.
 
 ---
 
-## Features
-
-- Manage Schools with the following fields:
-  - `id` (Primary Key, Auto-increment)
-  - `name` (String)
-  - `address` (Text)
-  - `established_year` (Integer)
-- Fully configured MySQL database connection
-- Environment-based settings for security and flexibility
-- Ready for development and collaboration with Git
+## **Description**
+This project implements a **RESTful API** for managing **Schools**, **Students**, and **Teachers** using **Django REST Framework (DRF)** with **MySQL** as the database.  
+All CRUD operations, JWT authentication, pagination, filtering, and search features are implemented.
 
 ---
 
-## Prerequisites
+## **Implemented Features**
 
-- Python 3.13+
-- MySQL 8+ installed (macOS via Homebrew )
-- `pip` (Python package manager)
-- Git
+### **1. School Management**
+-  CRUD operations for schools  
+-  Endpoints:  
+  - `GET /api/schools/` – List all schools  
+  - `POST /api/schools/` – Add a new school  
+  - `PUT /api/schools/{id}/` – Update school details  
+  - `DELETE /api/schools/{id}/` – Delete a school  
+
+### **2. Student Management**
+-  CRUD operations for students  
+-  Students linked to schools via **Foreign Key**  
+-  Endpoints:  
+  - `GET /api/students/` – List all students  
+  - `POST /api/students/` – Add a new student  
+  - `PUT /api/students/{id}/` – Update student details  
+  - `DELETE /api/students/{id}/` – Remove a student  
+-  Pagination for large datasets (`?page=1`)  
+-  Filtering and search by school or grade  
+
+### **3. Teacher Management**
+-  CRUD operations for teachers  
+-  Teachers linked to schools via **Foreign Key**  
+-  Endpoints:  
+  - `GET /api/teachers/` – List all teachers  
+  - `POST /api/teachers/` – Add a new teacher  
+  - `PUT /api/teachers/{id}/` – Update teacher details  
+  - `DELETE /api/teachers/{id}/` – Remove a teacher  
+
+### **4. Security & Enhancements**
+-  JWT authentication for secure API access  
+-  Basic validation in serializers  
+-  Pagination and filtering for handling large datasets  
 
 ---
 
-## Setup Instructions
+## **Setup Instructions**
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
-```bash
 git clone https://github.com/cole15sky/TechYatri-SMS.git
+
 cd TechYatri-SMS
+
 
 ### 2. Create a virtual environment
 python -m venv venv
@@ -51,4 +68,22 @@ pip install -r requirements.txt
 ### 4. Configure MySQL
 brew services start mysql   # macOS
 sudo systemctl start mysql  # Linux
+
+### 5. Apply Migrations
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+
+### 6. Create Superuser (Optional)
+
+python manage.py createsuperuser
+
+
+### 7. Run the Development Server
+
+python manage.py runserver
+
+API available at: http://127.0.0.1:8000/api/
 
